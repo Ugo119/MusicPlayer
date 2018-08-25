@@ -1,7 +1,10 @@
 package com.example.ugo.musicplayer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,7 +15,9 @@ public class Albums extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_albums);
-        ArrayList<MusicTemp> albums = new ArrayList<MusicTemp>();
+
+        //Create an arraylist of albums
+        final ArrayList<MusicTemp> albums = new ArrayList<MusicTemp>();
         albums.add(new MusicTemp("Ghetto University", "RunTown", R.drawable.runtown_album));
         albums.add(new MusicTemp("On a Spaceship", "Burna Boy", R.drawable.burna_album));
         albums.add(new MusicTemp("The play maker", "Phyno", R.drawable.phyno_album));
@@ -26,10 +31,25 @@ public class Albums extends AppCompatActivity {
         albums.add(new MusicTemp("Black magic", "Yemi Alade", R.drawable.yemi_album));
         albums.add(new MusicTemp("Ayo", "Wizkid", R.drawable.wiz_album));
 
-// Create the adapter to convert the array to views
+        // Create the adapter to convert the array to views
         MusicAdapter adapter = new MusicAdapter(this, albums);
-// Attach the adapter to a ListView
-        ListView listView = (ListView) findViewById(R.id.list);
+
+        //Create an object of the ListView
+        final ListView listView = (ListView) findViewById(R.id.list);
+
+        // Attach the adapter to a ListView
         listView.setAdapter(adapter);
+
+        //Setup an event listener for the ListView items
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //listView.getItemAtPosition(0);
+                MusicTemp word = albums.get(position);
+                Intent i = new Intent(Albums.this, PlayAll.class);
+                startActivity(i);
+            }
+        });
     }
 }

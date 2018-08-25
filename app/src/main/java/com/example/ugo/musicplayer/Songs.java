@@ -15,7 +15,9 @@ public class Songs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_songs);
-        ArrayList<MusicTemp> songs = new ArrayList<MusicTemp>();
+
+        //Create an arraylist of songs
+        final ArrayList<MusicTemp> songs = new ArrayList<MusicTemp>();
         songs.add(new MusicTemp("Father Father", "Phyno", R.drawable.phyno_album));
         songs.add(new MusicTemp("Wanted", "Wande Coal", R.drawable.wande_album));
         songs.add(new MusicTemp("Ye", "Burna Boy", R.drawable.burna_album));
@@ -29,11 +31,26 @@ public class Songs extends AppCompatActivity {
         songs.add(new MusicTemp("King kong", "Vector", R.drawable.vector_album));
         songs.add(new MusicTemp("Soldier", "Simi", R.drawable.album_eight));
 
-// Create the adapter to convert the array to views
+        // Create the adapter to convert the array to views
         MusicAdapter adapter = new MusicAdapter(this, songs);
-// Attach the adapter to a ListView
-        ListView listView = (ListView) findViewById(R.id.list);
+
+       //Create an object of the ListView
+        final ListView listView = (ListView) findViewById(R.id.list);
+
+        // Attach the adapter to a ListView
         listView.setAdapter(adapter);
+
+        //Setup an event listener for the items in the ListView
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //listView.getItemAtPosition(0);
+                MusicTemp word = songs.get(position);
+                Intent i = new Intent(Songs.this, NowPlaying.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="image_width">602dp</dimen>
+    <dimen name="image_height">528dp</dimen>
+    <dimen name="layout_margin">8dp</dimen>
+    <dimen name="textView_width">0dp</dimen>
+    <dimen name="textView_height">64dp</dimen>
+    <dimen name="textSize">24sp</dimen>
 
 
 </resources>
