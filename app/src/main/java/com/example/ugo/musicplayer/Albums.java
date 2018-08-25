@@ -45,7 +45,6 @@ public class Albums extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //listView.getItemAtPosition(0);
                 MusicTemp word = albums.get(position);
                 Intent i = new Intent(Albums.this, PlayAll.class);
                 startActivity(i);
