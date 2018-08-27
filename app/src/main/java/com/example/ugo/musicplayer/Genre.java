@@ -44,7 +44,7 @@ public class Genre extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MusicTemp word = genre.get(position);
-                Intent i = new Intent(Genre.this, PlayAll.class);
+                Intent i = new Intent(Genre.this, GenreList.class);
                 startActivity(i);
             }
         });

@@ -18,18 +18,34 @@
         </activity>
         <activity
             android:name=".Songs"
-            android:label="Songs" />
+            android:label="Songs"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Albums"
-            android:label="Albums" />
+            android:label="Albums"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Artists"
-            android:label="Artists" />
+            android:label="Artists"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Genre"
-            android:label="Genre" />
-        <activity android:name=".NowPlaying" />
-        <activity android:name=".PlayAll"></activity>
+            android:label="Genre"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NowPlaying"
+            android:label="Now playing"
+            android:parentActivityName=".Songs" />
+        <activity
+            android:name=".PlayAll"
+            android:label="Play all"
+            android:parentActivityName=".Albums" />
+        <activity android:name=".Artist"
+            android:label="Artist"
+            android:parentActivityName=".Artists"/>
+        <activity android:name=".GenreList"
+            android:label="Genre"
+            android:parentActivityName=".Genre"></activity>
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@
     <string name="songs">Songs</string>
     <string name="albums">Albums</string>
     <string name="artists">Artists</string>
+    <string name="artist">Artist</string>
     <string name="genre">Genre</string>
     <string name="thumbnail_description">Art</string>
     <string name="playIcon_description">Play</string>

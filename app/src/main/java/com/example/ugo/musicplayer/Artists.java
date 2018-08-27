@@ -46,7 +46,7 @@ public class Artists extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MusicTemp word = artists.get(position);
-                Intent i = new Intent(Artists.this, PlayAll.class);
+                Intent i = new Intent(Artists.this, Artist.class);
                 startActivity(i);
             }
         });
